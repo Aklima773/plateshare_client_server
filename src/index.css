@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+.active{
+    color: #9f62f2;
+    font-weight: bold;
+    border-bottom: 2px solid #9f62f2;
+    border-radius: 0%;
+    
+    
+}
+
+.navbar a:hover{
+    background-color: transparent !important;
+   
+}

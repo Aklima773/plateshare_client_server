@@ -10,6 +10,7 @@ import PrivateRoutes from './PrivateRoutes';
 import ManageMyFood from '../Component/ManagemyFood/ManageMyFood';
 import AddFood from '../Component/AddFood/AddFood';
 import MyFoodRequest from '../Component/MyFoodRquest/MyFoodRequest';
+import Errorpage from '../Pages/Errorpage/Erorpage';
 
 const router = createBrowserRouter([
     
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
             
 
         ]
+    },
+    {
+        path: '*',
+        element: <Errorpage/>
     }
 
 ])

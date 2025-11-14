@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '../Container/Container';
 import { Link } from 'react-router';
+import logo4 from './logo4.png'
 
 const Footer = () => {
     return (
@@ -59,7 +60,15 @@ const Footer = () => {
             d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
         </svg>
       </a>
+
     </div>
+    <div className='flex justify-between gap-2'>
+
+    <a className="tn btn-ghost text-2xl md:text-3xl font-bold text-purple-600"><Link to={"/"}>
+<img src={logo4} alt="" className='w-10'/></Link></a>
+<Link to={'/'}><h1 className='md:text-2xl text-purple-600 font-bold'>Plate Share</h1></Link>
+    </div>
+   
   </nav>
   </div>
   </Container>

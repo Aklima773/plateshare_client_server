@@ -3,6 +3,7 @@ import Container from '../Container/Container';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext/AuthContext';
 import { toast } from 'react-toastify';
+import logo4 from './logo4.png'
 
 const Navbar = () => {
 //signout function and user get from auth
@@ -83,7 +84,8 @@ const Navbar = () => {
     PlateShare</Link></a> */}
 
 <a className="tn btn-ghost text-2xl md:text-3xl font-bold text-purple-600"><Link to={"/"}>
-PlateShare</Link></a>
+<img src={logo4} alt="" className=''/></Link></a>
+<Link to={'/'}><h1 className='md:text-3xl text-purple-600 font-bold'>Plate Share</h1></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-[17px] hover:bg-transparent">

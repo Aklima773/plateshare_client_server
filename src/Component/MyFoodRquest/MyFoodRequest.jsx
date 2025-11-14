@@ -29,7 +29,7 @@ const MyFoodRequest = () => {
 
     useEffect(()=>{
 
-        axiosSecure.get(`/myfoods?email=${user?.email}`)
+        axiosSecure.get(`/myreqfoods?email=${user?.email}`)
        
         .then(data=>{
             console.log('My Food list', data)

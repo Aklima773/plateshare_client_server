@@ -82,7 +82,7 @@ const Navbar = () => {
     {/* <a className="btn btn-ghost font-bold text-3xl bg-gradient-to-r from-[#632ee3] to-[#9f62f2] bg-clip-text text-transparent"><Link to={"/"}>
     PlateShare</Link></a> */}
 
-<a className="tn btn-ghost text-2xl"><Link to={"/"}>
+<a className="tn btn-ghost text-2xl md:text-3xl font-bold text-purple-600"><Link to={"/"}>
 PlateShare</Link></a>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -117,7 +117,7 @@ PlateShare</Link></a>
     {user?
 
     <div className='flex justify-center items-center gap-3'>
-     <a className="btn bg-[#06a196] rounded-sm text-[white] text-[18px] font-bold" onClick={handleSignout}>Sign out</a> 
+     <a className="btn bg-purple-600  rounded-sm text-[white] text-[14px] md:text-[18px] font-bold" onClick={handleSignout}>Sign out</a> 
 
      <a><NavLink to={"/myprofile"}> {user?.photoURL && (
               <img
@@ -129,7 +129,7 @@ PlateShare</Link></a>
             )}</NavLink></a>
      </div>
      :
-      <Link className="btn bg-[#06a196] rounded-sm text-[white] text-[18px] font-bold" to = {"/login"}>Login</Link>
+      <Link className="btn bg-purple-600 rounded-sm text-[white] text-[14px] md:text-[18px] font-bold" to = {"/login"}>Login</Link>
       
       
       }

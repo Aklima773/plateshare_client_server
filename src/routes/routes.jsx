@@ -11,6 +11,7 @@ import ManageMyFood from '../Component/ManagemyFood/ManageMyFood';
 import AddFood from '../Component/AddFood/AddFood';
 import MyFoodRequest from '../Component/MyFoodRquest/MyFoodRequest';
 import Errorpage from '../Pages/Errorpage/Erorpage';
+import AllFoods from '../Pages/AllFoods/AllFoods';
 
 const router = createBrowserRouter([
     
@@ -26,8 +27,13 @@ const router = createBrowserRouter([
                 element: <Home/>
             },
             {
-                path:'/allfoods',
+                path:'/availablefoods',
                 element: <AvaialbleFoods/>
+            },
+            {
+                path: '/allfoods',
+                element: <AllFoods/>
+
             },
             {
                 path: '/login',

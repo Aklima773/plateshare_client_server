@@ -1,19 +1,16 @@
 import React from 'react';
-import Container from '../../Component/Container/Container';
+import HeroBanner from '../../Component/Herobanner/HeroBanner';
+import AllFoods from '../AllFoods/AllFoods';
+import AvaialbleFoods from '../AvaialableFoods/AvaialbleFoods';
+
 
 const Home = () => {
     return (
-        <div>
-            <Container>
-
-                
-            <h1>Hello Home</h1>
-
-
-            </Container>
-        
-            
-        </div>
+      <>
+      <HeroBanner/>
+      <AvaialbleFoods/>
+      
+      </>
     );
 };
 

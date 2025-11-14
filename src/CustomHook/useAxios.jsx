@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const axiosIntance = axios.create({
-    baseUrl: 'http://localhost:5000',
+    baseUrl: 'https://localhost:5000',
 });
 
 const useAxios = () => {

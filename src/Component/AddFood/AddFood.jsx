@@ -23,10 +23,15 @@ const AddFood = () => {
         const name = e.target.name.value;
         const photourl = e.target.photoUrl.value;
         const quantity = e.target.quantity.value;
+        const location = e.target.location.value;
+        const expire = e. target.expire.value;
+        const description = e.target.description.value;
+        const status = e.target.status.value;
+
 
         //console.log("Added a foods", name,photourl,quantity);
 
-        const newFoods ={name,photourl,quantity, email:user?.email, contrinutor_name: user?.displayName};
+        const newFoods ={name,photourl,quantity,location,expire,description,status, contributor_email:user?.email, contrinutor_name: user?.displayName};
 
        axiosSecure.post("/addfoods", newFoods)
         .then(data=>{
@@ -41,20 +46,44 @@ const AddFood = () => {
         <>
         <Container>
 
-    <form onSubmit={handleAddFoods} className='lg:w-1/2 mx-auto mt-25'>
-     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+    <form onSubmit={handleAddFoods} className='w-full max-w-md mx-auto mt-20 p-6  rounded-xl shadow-md bg-white'>
+     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
   <legend className="fieldset-legend text-3xl">Add Foods</legend>
 
   <label className="label">Foods Title</label>
-  <input type="text" className="input" name="name" placeholder="Title" />
+  <input type="text" className="input placeholder-gray-400 placeholder-opacity-70" name="name" placeholder="Title" />
 
   <label className="label">Image Url</label>
-  <input type="text" className="input" name="photoUrl" placeholder="Image Link" />
+  <input type="text" className="input placeholder-gray-400 placeholder-opacity-70" name="photoUrl" placeholder="Image Link" />
 
   <label className="label">Foods Quantity</label>
-  <input type="text" className="input" name="quantity" placeholder="Avialable Quantity" />
+  <input type="number" className="input placeholder-gray-400 placeholder-opacity-70" name="quantity" placeholder="Avialable Quantity" />
 
-  <button className="btn btn-neutral mt-4">Add Food</button>
+  <label className="label">Pickup Location</label>
+  <input type="text" className="input placeholder-gray-400 placeholder-opacity-70" name="location" placeholder="Pickup Location" />
+
+  <label htmlFor="expire" className="label">Expire Date</label>
+<input
+  id="expire"
+  type="date"
+  className="input placeholder-gray-400 placeholder-opacity-70"
+  name="expire"
+  placeholder="Expire Date"
+  min={new Date().toISOString().split("T")[0]} 
+  max="2030-12-31"  
+/>
+
+<label className="label">Status</label>
+<input type="text" className="input placeholder-gray-400 placeholder-opacity-70" value="Available" readOnly name="status" placeholder="Pickup Location" />
+
+<label className="label">Additional Notes</label>
+<textarea 
+  className="textarea textarea-bordered w-full placeholder-gray-400 placeholder-opacity-70" 
+  name="description" 
+  placeholder="Write something about the food..."
+></textarea>
+
+  <button className="btn bg-purple-600 text-white text-xl mt-4">Add Food</button>
      </fieldset>
      </form>
      </Container>

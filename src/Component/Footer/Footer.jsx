@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../Container/Container';
+import { Link } from 'react-router';
 
 const Footer = () => {
     return (
@@ -10,17 +11,17 @@ const Footer = () => {
 
   <nav>
     <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
+    <Link to={'/addfoods'}><a className="link link-hover">Post Foods</a></Link>
+    <Link to={'/managefood'}><a className="link link-hover">Manage Foods</a></Link>
+    <Link to={'/myfoodrequest'}><a className="link link-hover">Manage Foods</a></Link>
+
   </nav>
   <nav>
-    <h6 className="footer-title">Company</h6>
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <h6 className="footer-title text-purple-600 font-bold">PlateShare</h6>
+    <Link to={'/'}><a className="link link-hover">Home</a></Link>
+    <Link to={'/allfoods'}><a className="link link-hover">Available Foods</a></Link>
+    <Link to={'/myprofile'}><a className="link link-hover">My Profile</a></Link>
+    <Link to={'/login'}><a className="link link-hover">Login</a></Link>
   </nav>
   <nav>
     <h6 className="footer-title">Social</h6>
@@ -62,6 +63,7 @@ const Footer = () => {
   </nav>
   </div>
   </Container>
+  <p className='text-sm text-purple-600 font-semibold p-5 bg-gray-100 text-center'>Copyright@ PlateShare</p>
 </footer>
     );
 };

@@ -31,7 +31,7 @@ const AddFood = () => {
 
         //console.log("Added a foods", name,photourl,quantity);
 
-        const newFoods ={name,photourl,quantity,location,expire,description,status, contributor_email:user?.email, contrinutor_name: user?.displayName};
+        const newFoods ={name,photourl,quantity,location,expire,description,status, contributor_email:user?.email, contributor_name: user?.displayName};
 
        axiosSecure.post("/addfoods", newFoods)
         .then(data=>{

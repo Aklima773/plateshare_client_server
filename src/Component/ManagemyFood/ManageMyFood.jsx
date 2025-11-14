@@ -4,6 +4,7 @@ import useAxiosSecure from '../../CustomHook/useAxiosSecure';
 import Container from '../Container/Container';
 import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
+import her2 from './hero2.jpg'
 
 const ManageMyFood = () => {
 
@@ -89,7 +90,7 @@ const ManageMyFood = () => {
         };
         
 
-axiosSecure.patch(`/myfoods/${selectedFood._id}`, updateFood)
+      axiosSecure.patch(`/myfoods/${selectedFood._id}`, updateFood)
         .then(res => {
             const result = res.data;
             if (result.modifiedCount > 0) {
@@ -117,24 +118,58 @@ axiosSecure.patch(`/myfoods/${selectedFood._id}`, updateFood)
     return (
         <div>
             <Container>
-            {myFoods.length}
-            <tbody>
+        
 
-            {
-                myFoods.map((food, index)=><tr key={food._id}>
-                <td>{index + 1}</td>
-                <td>{food.name}</td>
-                <td>{food.quantity}</td>
-                <td>{user?.displayName}</td>
-                <td><button
-                                        onClick={() => handleDeleteBid(food._id)}
-                                        className="btn btn-outline btn-xs">Remove</button></td>
-                                        <td><button
-                                        onClick={() => myfoodsModalOpen(food)}
-                                        className="btn btn-outline btn-xs">Update</button></td>
-                </tr>
-            )}
-            </tbody>
+            <div
+  className="hero h-60 mb-10"
+  style={{ backgroundImage: `url(${her2})` }}
+>
+  <h1 className="text-4xl text-white font-bold ">
+    My All Posted Food
+  </h1>
+</div>
+
+
+            <ul className="list bg-base-100 rounded-box md:w-1/2 shadow-md mb-15 mx-auto">
+  
+  <li className="p-4 pb-2  opacity-60 tracking-wide text-xl text-purple-600">Total Posted Food: ({myFoods.length})</li>
+  
+
+  {myFoods.map((food, index) => (
+  <li className="list-row" key={food._id}>
+    <div className="text-4xl font-thin opacity-30 tabular-nums">{index + 1}</div>
+    <div>
+      <img
+        className="size-10 rounded-box"
+        src="https://img.daisyui.com/images/profile/demo/1@94.webp"
+        alt={food.name}
+      />
+    </div>
+    <div className="list-col-grow">
+      <div>{food.name}</div>
+      <div className="text-xs font-semibold opacity-60">
+        for {food.quantity} People
+      </div>
+    </div>
+    <button
+      onClick={() => handleDeleteBid(food._id)}
+      className="btn btn-outline btn-xs"
+    >
+      Remove
+    </button>
+    <button
+      onClick={() => myfoodsModalOpen(food)}
+      className="btn btn-outline btn-xs"
+    >
+      Update
+    </button>
+  </li>
+))}
+
+ 
+  
+</ul>
+            
 
             {/* //modal for data update  */}
 

@@ -83,7 +83,11 @@ const handleRequest = async ()=>{
             </h2>
 
             <div>
-              <h1 className='text-purple-600 text-xl font-bold'>Details:</h1>
+                <div className='flex justify-between items-center'>
+                <h1 className='text-purple-600 text-xl font-bold'>Details:</h1>
+                <h1 className='text-purple-600 text-xs font-bold'>Contributor: {selectedFood.contrinutor_name}</h1>
+                </div>
+            
               <p className='text-sm'>{selectedFood.description}</p>
             </div>
             <p className='mt-4 text-purple-600'>Quantity: {selectedFood.quantity} people</p>

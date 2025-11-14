@@ -195,7 +195,7 @@ const ManageMyFood = () => {
                                     <input type="text" name='fquantity' defaultValue={selectedFood?.quantity} className="input"
                                         placeholder='quantity'
                                     />
-                                    <button className="btn btn-neutral mt-4">Update Your Food</button>
+                                    <button className="btn bg-purple-600 text-white text-xl mt-4">Update Your Food</button>
                                 </fieldset>
                             </form>
 

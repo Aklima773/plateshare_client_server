@@ -50,7 +50,7 @@ const AllFoods = () => {
 
       <div className='mb-20'>
       <p className='mb-10 text-2xl font-bold text-purple-600'>Total Foods: ({allFoods.length})</p>
-<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+<div className="grid grid-cols-1 md:grid-cols-3 md:gap-6 mb-20">
       {allFoods.map(food => (
         <div key={food._id} className="card bg-base-100 w-96 shadow-sm grid grid-col-2 gap-4">
           <figure>

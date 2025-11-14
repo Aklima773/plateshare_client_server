@@ -3,8 +3,12 @@ import Container from '../../Component/Container/Container';
 import AllFoods from '../AllFoods/AllFoods';
 import useAxiosSecure from '../../CustomHook/useAxiosSecure';
 import DetailsFood from '../../Component/DetailsFood/DetailsFood';
+import useAuth from '../../CustomHook/useAuth';
+import { useNavigate } from 'react-router';
 
 const AvaialbleFoods = () => {
+  const {user} =useAuth();
+  const navigate = useNavigate();
 
     const [featuredFood, setFeaturedFood] = useState([]);
 
@@ -18,6 +22,11 @@ const AvaialbleFoods = () => {
   const [openModal, setOpenModal] = useState(false);
    //handle modal
  const myfoodsModalOpen = (food)=>{
+  if (!user) {
+    // user not logged in → redirect
+    navigate('/login');
+    return;
+}
   setSelectedFood(food); 
   setOpenModal(true);     
 }

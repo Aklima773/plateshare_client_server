@@ -12,3 +12,5 @@ users to share their surplus food with the community to reduce waste.
 4. User can requeste posted food to get
 
 5. Contributor can delete their posted food
+
+6.user can update and req
